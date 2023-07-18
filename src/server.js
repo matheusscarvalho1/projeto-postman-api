@@ -7,14 +7,12 @@ const routes = require('./routes/routes')
 
 const app = express()
 
-
+// habiliita server para receber dados json
+app.use(express.json())
 
 //conexão com o banco de dados
 db.connect()
 
-
-// habilita server para receber dados via post (formulário)
-app.use(express.urlencoded({ extended: true }))
 
  // definindo as rotas
 app.use('/api', routes)
